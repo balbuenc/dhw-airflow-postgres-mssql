@@ -1,0 +1,2528 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/23/2023 10:29:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESARROLOREPORT"
+  DTS:CreatorName="ID\cbalbuena"
+  DTS:DTSID="{A7F7CFB1-23C9-412E-93F9-D7C60F192D3B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5223.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ApplicantsDay"
+  DTS:PackageType="5"
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{DDE915AF-CF39-446D-9564-CF88D3D18E44}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Destination Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{193F4F17-D546-40AA-AC3C-819D63950E8E}"
+      DTS:ObjectName="Flat File Destination Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"\\\\Epedpveeam01\\CSV-MTIC\\" + @[User::exported_filename]   + (DT_WSTR, 4)YEAR(GETDATE()) + RIGHT("0" + (DT_WSTR, 2)MONTH(GETDATE()), 2) + RIGHT("0" + (DT_WSTR, 2)DAY(GETDATE()), 2) + ".csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="15370"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="\\Epedpveeam01\CSV-MTIC\20230917.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cedula"
+              DTS:DTSID="{B256A92E-494A-4AD1-A94F-D2B30001D35F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ic_ofnac"
+              DTS:DTSID="{9D8199E6-715E-4326-87F5-9A6B23DAAA79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ic_feccar"
+              DTS:DTSID="{DC255069-DDCB-4D78-A626-7A8BD5CBDD04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ic_folio"
+              DTS:DTSID="{FBDDEB73-A4D7-4549-A1C9-CC4521D87D72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ic_tomo"
+              DTS:DTSID="{A8127594-53E6-4CC2-8EA9-057F8297388E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ic_acta"
+              DTS:DTSID="{F2C36529-E8FD-475D-AD8E-11FA865E0C87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="prontuario"
+              DTS:DTSID="{AC226B74-B820-4C0C-BD32-D41355037EE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="apellido"
+              DTS:DTSID="{33405B83-96CB-41B6-A045-9458BA9D3C62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nombres"
+              DTS:DTSID="{716F3F59-EF6B-423B-B25F-7407FCF18180}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fech_nacim"
+              DTS:DTSID="{A6CFD2A0-8669-4C78-B5E7-1226D5EA580B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="lugar_nacim"
+              DTS:DTSID="{AA7CC1B2-8D66-466D-98A7-8D3AA2DC940E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nacional_actual"
+              DTS:DTSID="{B52A317D-D3B6-4017-BEC0-479534254B15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nacional_origen"
+              DTS:DTSID="{2CEB09AC-7B90-4892-A50D-7C4D6076C432}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sexo"
+              DTS:DTSID="{C082C62F-5273-4408-9DA5-B60E02F97177}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="instruccion"
+              DTS:DTSID="{081BB30F-60B1-45BB-9006-BD02B821F2B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="profesion"
+              DTS:DTSID="{2B029840-192B-46E3-B284-D7294E8D80CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="estado_civil"
+              DTS:DTSID="{20D30714-E8E8-400D-B0F0-BF857B85B816}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fech_ecivil"
+              DTS:DTSID="{C3C0B7C4-54D2-40D1-8663-C987FC9CEE03}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="acto_ecivil"
+              DTS:DTSID="{41C243DB-7AB6-435B-B5C3-8AEF2EC83894}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="domicilio"
+              DTS:DTSID="{4AC97CCB-367B-4C81-95ED-2C92E2E7CDFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="barrio_ciudad"
+              DTS:DTSID="{4DE36A69-5E5F-407C-8AA0-71609FAE82B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="telefono"
+              DTS:DTSID="{B2C3E2C9-DEA5-45E3-993D-F864E30AA4D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="celular"
+              DTS:DTSID="{E125882D-A710-4951-BC68-21DAD258823F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="donante_org"
+              DTS:DTSID="{6FB6FC1C-381E-484A-A30A-2E0147A25EA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fallecido"
+              DTS:DTSID="{99AD54CF-124A-4679-8ADC-57171C602D81}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tipo_docum"
+              DTS:DTSID="{7B7EE907-436B-4413-9D65-A284B56009E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ubicacion"
+              DTS:DTSID="{8EB17CA9-D7CA-44A8-94F8-99EEF07BC3B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="observaciones"
+              DTS:DTSID="{7FEB1387-21DD-4FCA-9149-4D0131B42A42}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="padre_cedul"
+              DTS:DTSID="{C2C6A1C2-E90F-4216-8257-0189FFE45558}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="padre_nombre"
+              DTS:DTSID="{22D236E4-297E-4F1E-B0AB-872757F3946C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="padre_apelli"
+              DTS:DTSID="{C5934018-EE86-4309-8564-F7D401923C85}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="madre_cedul"
+              DTS:DTSID="{0E209986-4E2D-4620-86AC-2B2265DD496A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="madre_nombre"
+              DTS:DTSID="{501357A0-C21D-47BC-BFE0-CAA6313C1867}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="madre_apelli"
+              DTS:DTSID="{A50DB06B-4865-460E-8EC9-3F4082F57732}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="conyu_cedul"
+              DTS:DTSID="{2139A6F3-F027-45EC-A3D1-07961FD645E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="conyu_nombre"
+              DTS:DTSID="{B524F6F3-B1B0-46DD-AB16-0C62196B8BE3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="conyu_apelli"
+              DTS:DTSID="{DA7BB42B-926A-4390-9366-CC89429D6C91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="acomp_cedul"
+              DTS:DTSID="{93CA9FA5-AEB8-4C06-A41D-3E7697197021}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="acomp_parent"
+              DTS:DTSID="{B34534D4-CD15-4D6A-9F79-DCEE839B177D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="acomp_nombre"
+              DTS:DTSID="{2EE6A915-6C09-4017-8A92-E25BC20D2220}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="acomp_apelli"
+              DTS:DTSID="{ACDB918F-2E81-477A-B97C-32EA32DE7FA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fech_autoriz"
+              DTS:DTSID="{2B8C7365-01FA-4093-9C8B-9048FE57024D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="func_autoriz"
+              DTS:DTSID="{36B23675-A585-4F71-85B7-9590D8E3879B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fech_impresion"
+              DTS:DTSID="{EE4A9A97-F04D-462F-8196-BC4A82207071}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="func_impresion"
+              DTS:DTSID="{301766EF-533C-4025-90FD-A38B5D3D8FD3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="numero_soporte"
+              DTS:DTSID="{C20A5D52-D56A-45A5-8C0C-FD21433E83B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fech_entrega"
+              DTS:DTSID="{20F9A81B-C973-4C08-A6BC-CCBA10D652CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="func_entrega"
+              DTS:DTSID="{50DA88C1-BFCC-48A2-8CDA-3D7D15DF9701}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="prontuario_s"
+              DTS:DTSID="{43B79CE6-E89D-4360-BC6C-28778EDBB9BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="128"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="retirado_por"
+              DTS:DTSID="{1F47BF40-6321-42A1-BFC0-946EFBE439EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="hora_insert"
+              DTS:DTSID="{052EB717-49AA-4F27-B867-A31F8A642071}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.PipeLines]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{2789E64D-04E8-4E35-992C-C184B521ED73}"
+      DTS:ObjectName="localhost.PipeLines">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=PipeLines;Integrated Security=True;Application Name=SSIS-Package-{2789E64D-04E8-4E35-992C-C184B521ED73}localhost.PipeLines;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5AFADAA0-8FE2-4E85-B90F-BE3539637B60}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="date_end">
+      <DTS:VariableValue
+        DTS:DataType="7">8/30/2023 10:15:46 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DC314BC4-2CCE-4E7C-91F5-2DDA2562060A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="date_start">
+      <DTS:VariableValue
+        DTS:DataType="7">8/30/2023 10:15:33 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E5F9F44F-39D4-4D38-9811-88C75C2F0CEF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="exported_filename">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B9F89667-02A9-4D0B-8620-7235EF56841C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8">thales_shred_path</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export Personal Data Operations"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7F290F1E-0D08-49E0-85B5-F190C2C9C422}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export Personal Data Operations"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Export Personal Data Operations\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."mitic_imported_data"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Personal Data Operations\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PipeLines]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PipeLines]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[id_process]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[id_process]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[id_process]"
+                      name="id_process"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[cedula]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[cedula]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[cedula]"
+                      name="cedula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_ofnac]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_ofnac]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_ofnac]"
+                      name="ic_ofnac"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_feccar]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_feccar]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_feccar]"
+                      name="ic_feccar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_folio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_folio]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_folio]"
+                      name="ic_folio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_tomo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_tomo]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_tomo]"
+                      name="ic_tomo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_acta]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_acta]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_acta]"
+                      name="ic_acta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[prontuario]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[prontuario]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[prontuario]"
+                      name="prontuario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[apellido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[apellido]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[apellido]"
+                      name="apellido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nombres]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nombres]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nombres]"
+                      name="nombres"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_nacim]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_nacim]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_nacim]"
+                      name="fech_nacim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[lugar_nacim]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[lugar_nacim]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[lugar_nacim]"
+                      name="lugar_nacim"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_actual]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_actual]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_actual]"
+                      name="nacional_actual"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_origen]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_origen]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_origen]"
+                      name="nacional_origen"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[sexo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[sexo]"
+                      length="50"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[sexo]"
+                      name="sexo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[instruccion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[instruccion]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[instruccion]"
+                      name="instruccion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[profesion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[profesion]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[profesion]"
+                      name="profesion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[estado_civil]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[estado_civil]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[estado_civil]"
+                      name="estado_civil"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_ecivil]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_ecivil]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_ecivil]"
+                      name="fech_ecivil"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acto_ecivil]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acto_ecivil]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acto_ecivil]"
+                      name="acto_ecivil"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[domicilio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[domicilio]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[domicilio]"
+                      name="domicilio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[barrio_ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[barrio_ciudad]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[barrio_ciudad]"
+                      name="barrio_ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[telefono]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[telefono]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[telefono]"
+                      name="telefono"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[celular]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[celular]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[celular]"
+                      name="celular"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[donante_org]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[donante_org]"
+                      length="50"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[donante_org]"
+                      name="donante_org"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fallecido]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fallecido]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fallecido]"
+                      name="fallecido"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[tipo_docum]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[tipo_docum]"
+                      length="50"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[tipo_docum]"
+                      name="tipo_docum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ubicacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ubicacion]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ubicacion]"
+                      name="ubicacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[observaciones]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[observaciones]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[observaciones]"
+                      name="observaciones"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_cedul]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[padre_cedul]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_cedul]"
+                      name="padre_cedul"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[padre_nombre]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_nombre]"
+                      name="padre_nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_apelli]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[padre_apelli]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_apelli]"
+                      name="padre_apelli"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_cedul]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[madre_cedul]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_cedul]"
+                      name="madre_cedul"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[madre_nombre]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_nombre]"
+                      name="madre_nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_apelli]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[madre_apelli]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_apelli]"
+                      name="madre_apelli"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_cedul]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[conyu_cedul]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_cedul]"
+                      name="conyu_cedul"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[conyu_nombre]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_nombre]"
+                      name="conyu_nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_apelli]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[conyu_apelli]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_apelli]"
+                      name="conyu_apelli"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_cedul]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_cedul]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_cedul]"
+                      name="acomp_cedul"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_parent]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_parent]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_parent]"
+                      name="acomp_parent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_nombre]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_nombre]"
+                      name="acomp_nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_apelli]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_apelli]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_apelli]"
+                      name="acomp_apelli"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_autoriz]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_autoriz]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_autoriz]"
+                      name="fech_autoriz"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_autoriz]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[func_autoriz]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_autoriz]"
+                      name="func_autoriz"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_impresion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_impresion]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_impresion]"
+                      name="fech_impresion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_impresion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[func_impresion]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_impresion]"
+                      name="func_impresion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[numero_soporte]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[numero_soporte]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[numero_soporte]"
+                      name="numero_soporte"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_entrega]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_entrega]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_entrega]"
+                      name="fech_entrega"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_entrega]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[func_entrega]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_entrega]"
+                      name="func_entrega"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[prontuario_s]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[prontuario_s]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[prontuario_s]"
+                      name="prontuario_s"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[retirado_por]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[retirado_por]"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[retirado_por]"
+                      name="retirado_por"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[hora_insert]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[hora_insert]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[hora_insert]"
+                      name="hora_insert"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[id_process]"
+                      dataType="i8"
+                      name="id_process" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[cedula]"
+                      dataType="wstr"
+                      length="128"
+                      name="cedula" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_ofnac]"
+                      dataType="i4"
+                      name="ic_ofnac" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_feccar]"
+                      dataType="i4"
+                      name="ic_feccar" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_folio]"
+                      dataType="i4"
+                      name="ic_folio" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_tomo]"
+                      dataType="i4"
+                      name="ic_tomo" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_acta]"
+                      dataType="i4"
+                      name="ic_acta" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[prontuario]"
+                      dataType="i8"
+                      name="prontuario" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[apellido]"
+                      dataType="wstr"
+                      length="128"
+                      name="apellido" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nombres]"
+                      dataType="wstr"
+                      length="128"
+                      name="nombres" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_nacim]"
+                      dataType="dbTimeStamp"
+                      name="fech_nacim" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[lugar_nacim]"
+                      dataType="wstr"
+                      length="128"
+                      name="lugar_nacim" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_actual]"
+                      dataType="wstr"
+                      length="128"
+                      name="nacional_actual" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_origen]"
+                      dataType="wstr"
+                      length="128"
+                      name="nacional_origen" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[sexo]"
+                      dataType="wstr"
+                      length="50"
+                      name="sexo" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[instruccion]"
+                      dataType="wstr"
+                      length="128"
+                      name="instruccion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[profesion]"
+                      dataType="wstr"
+                      length="128"
+                      name="profesion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[estado_civil]"
+                      dataType="wstr"
+                      length="128"
+                      name="estado_civil" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_ecivil]"
+                      dataType="dbTimeStamp"
+                      name="fech_ecivil" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acto_ecivil]"
+                      dataType="wstr"
+                      length="128"
+                      name="acto_ecivil" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[domicilio]"
+                      dataType="wstr"
+                      length="128"
+                      name="domicilio" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[barrio_ciudad]"
+                      dataType="wstr"
+                      length="128"
+                      name="barrio_ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[telefono]"
+                      dataType="wstr"
+                      length="128"
+                      name="telefono" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[celular]"
+                      dataType="wstr"
+                      length="128"
+                      name="celular" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[donante_org]"
+                      dataType="wstr"
+                      length="50"
+                      name="donante_org" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fallecido]"
+                      dataType="wstr"
+                      length="128"
+                      name="fallecido" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[tipo_docum]"
+                      dataType="wstr"
+                      length="50"
+                      name="tipo_docum" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ubicacion]"
+                      dataType="wstr"
+                      length="128"
+                      name="ubicacion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[observaciones]"
+                      dataType="wstr"
+                      length="128"
+                      name="observaciones" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[padre_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="padre_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[padre_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="padre_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[padre_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="padre_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[madre_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="madre_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[madre_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="madre_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[madre_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="madre_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[conyu_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="conyu_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[conyu_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="conyu_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[conyu_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="conyu_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_parent]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_parent" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[acomp_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_autoriz]"
+                      dataType="dbTimeStamp"
+                      name="fech_autoriz" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[func_autoriz]"
+                      dataType="wstr"
+                      length="128"
+                      name="func_autoriz" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_impresion]"
+                      dataType="dbTimeStamp"
+                      name="fech_impresion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[func_impresion]"
+                      dataType="wstr"
+                      length="128"
+                      name="func_impresion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[numero_soporte]"
+                      dataType="wstr"
+                      length="128"
+                      name="numero_soporte" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[fech_entrega]"
+                      dataType="dbTimeStamp"
+                      name="fech_entrega" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[func_entrega]"
+                      dataType="wstr"
+                      length="128"
+                      name="func_entrega" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[prontuario_s]"
+                      dataType="wstr"
+                      length="128"
+                      name="prontuario_s" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[retirado_por]"
+                      dataType="wstr"
+                      length="128"
+                      name="retirado_por" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[hora_insert]"
+                      dataType="dbTimeStamp"
+                      name="hora_insert" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[id_process]"
+                      dataType="i8"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[id_process]"
+                      name="id_process" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[cedula]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[cedula]"
+                      name="cedula" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_ofnac]"
+                      dataType="i4"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_ofnac]"
+                      name="ic_ofnac" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_feccar]"
+                      dataType="i4"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_feccar]"
+                      name="ic_feccar" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_folio]"
+                      dataType="i4"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_folio]"
+                      name="ic_folio" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_tomo]"
+                      dataType="i4"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_tomo]"
+                      name="ic_tomo" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_acta]"
+                      dataType="i4"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_acta]"
+                      name="ic_acta" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[prontuario]"
+                      dataType="i8"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[prontuario]"
+                      name="prontuario" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[apellido]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[apellido]"
+                      name="apellido" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nombres]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nombres]"
+                      name="nombres" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_nacim]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_nacim]"
+                      name="fech_nacim" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[lugar_nacim]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[lugar_nacim]"
+                      name="lugar_nacim" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_actual]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_actual]"
+                      name="nacional_actual" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_origen]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_origen]"
+                      name="nacional_origen" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[sexo]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[sexo]"
+                      name="sexo" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[instruccion]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[instruccion]"
+                      name="instruccion" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[profesion]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[profesion]"
+                      name="profesion" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[estado_civil]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[estado_civil]"
+                      name="estado_civil" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_ecivil]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_ecivil]"
+                      name="fech_ecivil" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acto_ecivil]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acto_ecivil]"
+                      name="acto_ecivil" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[domicilio]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[domicilio]"
+                      name="domicilio" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[barrio_ciudad]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[barrio_ciudad]"
+                      name="barrio_ciudad" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[telefono]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[telefono]"
+                      name="telefono" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[celular]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[celular]"
+                      name="celular" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[donante_org]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[donante_org]"
+                      name="donante_org" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fallecido]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fallecido]"
+                      name="fallecido" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[tipo_docum]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[tipo_docum]"
+                      name="tipo_docum" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ubicacion]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ubicacion]"
+                      name="ubicacion" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[observaciones]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[observaciones]"
+                      name="observaciones" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[padre_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[padre_cedul]"
+                      name="padre_cedul" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[padre_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[padre_nombre]"
+                      name="padre_nombre" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[padre_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[padre_apelli]"
+                      name="padre_apelli" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[madre_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[madre_cedul]"
+                      name="madre_cedul" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[madre_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[madre_nombre]"
+                      name="madre_nombre" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[madre_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[madre_apelli]"
+                      name="madre_apelli" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[conyu_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[conyu_cedul]"
+                      name="conyu_cedul" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[conyu_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[conyu_nombre]"
+                      name="conyu_nombre" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[conyu_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[conyu_apelli]"
+                      name="conyu_apelli" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_cedul]"
+                      name="acomp_cedul" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_parent]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_parent]"
+                      name="acomp_parent" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_nombre]"
+                      name="acomp_nombre" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[acomp_apelli]"
+                      name="acomp_apelli" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_autoriz]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_autoriz]"
+                      name="fech_autoriz" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[func_autoriz]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[func_autoriz]"
+                      name="func_autoriz" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_impresion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_impresion]"
+                      name="fech_impresion" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[func_impresion]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[func_impresion]"
+                      name="func_impresion" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[numero_soporte]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[numero_soporte]"
+                      name="numero_soporte" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_entrega]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[fech_entrega]"
+                      name="fech_entrega" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[func_entrega]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[func_entrega]"
+                      name="func_entrega" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[prontuario_s]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[prontuario_s]"
+                      name="prontuario_s" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[retirado_por]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[retirado_por]"
+                      name="retirado_por" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[hora_insert]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[hora_insert]"
+                      name="hora_insert" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Personal Data Operations\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="15370"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Personal Data Operations\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Destination Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Destination Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[cedula]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="cedula"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[cedula]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[cedula]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_ofnac]"
+                      cachedDataType="i4"
+                      cachedName="ic_ofnac"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_ofnac]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_ofnac]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_feccar]"
+                      cachedDataType="i4"
+                      cachedName="ic_feccar"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_feccar]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_feccar]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_folio]"
+                      cachedDataType="i4"
+                      cachedName="ic_folio"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_folio]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_folio]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_tomo]"
+                      cachedDataType="i4"
+                      cachedName="ic_tomo"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_tomo]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_tomo]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_acta]"
+                      cachedDataType="i4"
+                      cachedName="ic_acta"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_acta]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_acta]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[prontuario]"
+                      cachedDataType="i8"
+                      cachedName="prontuario"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[prontuario]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[prontuario]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[apellido]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="apellido"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[apellido]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[apellido]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[nombres]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="nombres"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nombres]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nombres]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[fech_nacim]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="fech_nacim"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_nacim]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_nacim]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[lugar_nacim]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="lugar_nacim"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[lugar_nacim]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[lugar_nacim]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[nacional_actual]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="nacional_actual"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_actual]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_actual]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[nacional_origen]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="nacional_origen"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_origen]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_origen]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[sexo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="sexo"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[sexo]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[sexo]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[instruccion]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="instruccion"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[instruccion]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[instruccion]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[profesion]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="profesion"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[profesion]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[profesion]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[estado_civil]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="estado_civil"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[estado_civil]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[estado_civil]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[fech_ecivil]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="fech_ecivil"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_ecivil]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_ecivil]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[acto_ecivil]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="acto_ecivil"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acto_ecivil]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acto_ecivil]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[domicilio]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="domicilio"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[domicilio]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[domicilio]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[barrio_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="barrio_ciudad"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[barrio_ciudad]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[barrio_ciudad]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[telefono]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="telefono"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[telefono]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[telefono]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[celular]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="celular"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[celular]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[celular]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[donante_org]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="donante_org"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[donante_org]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[donante_org]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[fallecido]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="fallecido"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fallecido]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fallecido]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[tipo_docum]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tipo_docum"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[tipo_docum]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[tipo_docum]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ubicacion]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="ubicacion"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ubicacion]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ubicacion]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[observaciones]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="observaciones"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[observaciones]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[observaciones]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[padre_cedul]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="padre_cedul"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[padre_cedul]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_cedul]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[padre_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="padre_nombre"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[padre_nombre]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_nombre]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[padre_apelli]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="padre_apelli"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[padre_apelli]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[padre_apelli]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[madre_cedul]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="madre_cedul"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[madre_cedul]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_cedul]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[madre_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="madre_nombre"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[madre_nombre]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_nombre]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[madre_apelli]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="madre_apelli"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[madre_apelli]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[madre_apelli]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[conyu_cedul]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="conyu_cedul"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[conyu_cedul]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_cedul]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[conyu_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="conyu_nombre"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[conyu_nombre]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_nombre]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[conyu_apelli]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="conyu_apelli"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[conyu_apelli]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[conyu_apelli]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[acomp_cedul]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="acomp_cedul"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_cedul]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_cedul]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[acomp_parent]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="acomp_parent"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_parent]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_parent]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[acomp_nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="acomp_nombre"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_nombre]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_nombre]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[acomp_apelli]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="acomp_apelli"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_apelli]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[acomp_apelli]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[fech_autoriz]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="fech_autoriz"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_autoriz]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_autoriz]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[func_autoriz]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="func_autoriz"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[func_autoriz]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_autoriz]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[fech_impresion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="fech_impresion"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_impresion]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_impresion]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[func_impresion]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="func_impresion"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[func_impresion]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_impresion]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[numero_soporte]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="numero_soporte"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[numero_soporte]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[numero_soporte]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[fech_entrega]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="fech_entrega"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_entrega]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[fech_entrega]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[func_entrega]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="func_entrega"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[func_entrega]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[func_entrega]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[prontuario_s]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="prontuario_s"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[prontuario_s]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[prontuario_s]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[retirado_por]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="retirado_por"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[retirado_por]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[retirado_por]" />
+                    <inputColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[hora_insert]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="hora_insert"
+                      externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hora_insert]"
+                      lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[hora_insert]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[cedula]"
+                      dataType="wstr"
+                      length="128"
+                      name="cedula" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_ofnac]"
+                      dataType="i4"
+                      name="ic_ofnac" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_feccar]"
+                      dataType="i4"
+                      name="ic_feccar" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_folio]"
+                      dataType="i4"
+                      name="ic_folio" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_tomo]"
+                      dataType="i4"
+                      name="ic_tomo" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_acta]"
+                      dataType="i4"
+                      name="ic_acta" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[prontuario]"
+                      dataType="i8"
+                      name="prontuario" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[apellido]"
+                      dataType="wstr"
+                      length="128"
+                      name="apellido" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nombres]"
+                      dataType="wstr"
+                      length="128"
+                      name="nombres" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_nacim]"
+                      dataType="dbTimeStamp"
+                      name="fech_nacim" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[lugar_nacim]"
+                      dataType="wstr"
+                      length="128"
+                      name="lugar_nacim" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_actual]"
+                      dataType="numeric"
+                      name="nacional_actual"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_origen]"
+                      dataType="numeric"
+                      name="nacional_origen"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[sexo]"
+                      dataType="wstr"
+                      length="50"
+                      name="sexo" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[instruccion]"
+                      dataType="wstr"
+                      length="128"
+                      name="instruccion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[profesion]"
+                      dataType="wstr"
+                      length="128"
+                      name="profesion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[estado_civil]"
+                      dataType="wstr"
+                      length="128"
+                      name="estado_civil" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_ecivil]"
+                      dataType="dbTimeStamp"
+                      name="fech_ecivil" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acto_ecivil]"
+                      dataType="wstr"
+                      length="128"
+                      name="acto_ecivil" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[domicilio]"
+                      dataType="wstr"
+                      length="128"
+                      name="domicilio" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[barrio_ciudad]"
+                      dataType="wstr"
+                      length="128"
+                      name="barrio_ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[telefono]"
+                      dataType="wstr"
+                      length="128"
+                      name="telefono" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[celular]"
+                      dataType="wstr"
+                      length="128"
+                      name="celular" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[donante_org]"
+                      dataType="wstr"
+                      length="50"
+                      name="donante_org" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fallecido]"
+                      dataType="wstr"
+                      length="128"
+                      name="fallecido" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[tipo_docum]"
+                      dataType="wstr"
+                      length="50"
+                      name="tipo_docum" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ubicacion]"
+                      dataType="wstr"
+                      length="128"
+                      name="ubicacion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[observaciones]"
+                      dataType="wstr"
+                      length="128"
+                      name="observaciones" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[padre_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="padre_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[padre_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="padre_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[padre_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="padre_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[madre_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="madre_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[madre_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="madre_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[madre_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="madre_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[conyu_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="conyu_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[conyu_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="conyu_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[conyu_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="conyu_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_cedul]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_cedul" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_parent]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_parent" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_nombre]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[acomp_apelli]"
+                      dataType="wstr"
+                      length="128"
+                      name="acomp_apelli" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_autoriz]"
+                      dataType="dbTimeStamp"
+                      name="fech_autoriz" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[func_autoriz]"
+                      dataType="wstr"
+                      length="128"
+                      name="func_autoriz" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_impresion]"
+                      dataType="dbTimeStamp"
+                      name="fech_impresion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[func_impresion]"
+                      dataType="wstr"
+                      length="128"
+                      name="func_impresion" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[numero_soporte]"
+                      dataType="wstr"
+                      length="128"
+                      name="numero_soporte" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fech_entrega]"
+                      dataType="dbTimeStamp"
+                      name="fech_entrega" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[func_entrega]"
+                      dataType="wstr"
+                      length="128"
+                      name="func_entrega" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[prontuario_s]"
+                      dataType="wstr"
+                      length="128"
+                      name="prontuario_s" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[retirado_por]"
+                      dataType="wstr"
+                      length="128"
+                      name="retirado_por" />
+                    <externalMetadataColumn
+                      refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hora_insert]"
+                      dataType="dbTimeStamp"
+                      name="hora_insert" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Export Personal Data Operations.Paths[ADO NET Source Output]"
+              endId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="ADO NET Source Output"
+              startId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Personal Data Operations from Central"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Execute T-SQL Statement Task"
+      DTS:DTSID="{2AB9AE7F-C2A5-409B-81DC-4F2A2B13C26A}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Personal Data Operations from Central"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2789E64D-04E8-4E35-992C-C184B521ED73}"
+          SQLTask:SqlStatementSource="declare @day date = getdate();&#xA;&#xA;&#xA;EXEC [dbo].[sp_get_applicants_data] @p_start_date = @day, @p_end_date = @day;"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Send SFTP File"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{541336C3-B6EC-40DC-B3F9-56263DF1897E}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Send SFTP File"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Exported_SSIS\Exported\psftp.exe"
+          Arguments="identificaciones@sftp.identificaciones.gov.py -P 2222 -pw T3nd0t4.2o23 -batch -b upload.bat"
+          WorkingDirectory="C:\Exported_SSIS\Exported" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1088C261-A45E-4C1E-9EE5-63419724F271}"
+      DTS:From="Package\Import Personal Data Operations from Central"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Export Personal Data Operations" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{289559F9-6988-4828-8CA3-5AC4EF527D98}"
+      DTS:From="Package\Export Personal Data Operations"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Send SFTP File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Export Personal Data Operations"
+          TopLeft="166,260" />
+        <NodeLayout
+          Size="303,42"
+          Id="Package\Import Personal Data Operations from Central"
+          TopLeft="157,87" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Send SFTP File"
+          TopLeft="215,466" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="308.5,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.5,131"
+              Start="0,0"
+              End="-22.5,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.5"
+                    Point2="0,65.5"
+                    Point3="-4,65.5" />
+                  <mssgle:LineSegment
+                    End="-18.5,65.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,65.5"
+                    Point2="-22.5,65.5"
+                    Point3="-22.5,69.5" />
+                  <mssgle:LineSegment
+                    End="-22.5,123.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="289.5,302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,164"
+              Start="0,0"
+              End="0,156.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,156.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Export Personal Data Operations">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Export Personal Data Operations\Flat File Destination"
+          TopLeft="310,307" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Export Personal Data Operations\ADO NET Source"
+          TopLeft="235,123" />
+        <EdgeLayout
+          Id="Package\Export Personal Data Operations.Paths[ADO NET Source Output]"
+          TopLeft="318,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80,142"
+              Start="0,0"
+              End="80,134.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67"
+                    Point2="0,71"
+                    Point3="4,71" />
+                  <mssgle:LineSegment
+                    End="76,71" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76,71"
+                    Point2="80,71"
+                    Point3="80,75" />
+                  <mssgle:LineSegment
+                    End="80,134.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Export Personal Data Operations\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
