@@ -2,13 +2,18 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>MiTIC-SSIS</Name>
-    <LastWriteTime>2023-09-12T19:51:00.0277184Z</LastWriteTime>
+    <LastWriteTime>2023-10-02T19:16:29.1677993Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>ApplicantsDay.dtsx</Name>
-      <LastWriteTime>2023-09-17T23:12:10.7388509Z</LastWriteTime>
+      <LastWriteTime>2023-10-03T12:23:55.9967499Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>ETL.dtsx</Name>
+      <LastWriteTime>2023-09-30T01:21:06.7266108Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

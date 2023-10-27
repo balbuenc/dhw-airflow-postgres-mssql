@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ApplicantsDay"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{DDE915AF-CF39-446D-9564-CF88D3D18E44}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{51CEAEC0-FFF0-47B3-A905-1F1BFDFBDD52}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="\\Epedpveeam01\CSV-MTIC\20230917.csv">
+          DTS:ConnectionString="\\Epedpveeam01\CSV-MTIC\20231003.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,47 +41,52 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="cedula"
-              DTS:DTSID="{B256A92E-494A-4AD1-A94F-D2B30001D35F}"
+              DTS:DTSID="{FA8CE4EE-39DA-4D61-A1AF-32800CF551E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ic_ofnac"
-              DTS:DTSID="{9D8199E6-715E-4326-87F5-9A6B23DAAA79}"
+              DTS:DTSID="{95D2E440-BE98-4089-98C8-69368A540D66}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ic_feccar"
-              DTS:DTSID="{DC255069-DDCB-4D78-A626-7A8BD5CBDD04}"
+              DTS:DTSID="{B0CBF4EE-1DBC-448C-A52E-FD45C7B6C267}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ic_folio"
-              DTS:DTSID="{FBDDEB73-A4D7-4549-A1C9-CC4521D87D72}"
+              DTS:DTSID="{A4F59A03-CAC1-4B63-86C7-BC6F1CF38BAD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ic_tomo"
-              DTS:DTSID="{A8127594-53E6-4CC2-8EA9-057F8297388E}"
+              DTS:DTSID="{82CA1375-C4BA-4FE9-8640-26561D8E3EF5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x003B_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ic_acta"
-              DTS:DTSID="{F2C36529-E8FD-475D-AD8E-11FA865E0C87}"
+              DTS:DTSID="{BD826393-47C1-493D-9722-D433159F4394}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -89,7 +94,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="prontuario"
-              DTS:DTSID="{AC226B74-B820-4C0C-BD32-D41355037EE4}"
+              DTS:DTSID="{92D72B5F-2FBD-4F77-A14B-D5049D242DF4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +103,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="apellido"
-              DTS:DTSID="{33405B83-96CB-41B6-A045-9458BA9D3C62}"
+              DTS:DTSID="{0800F239-C694-4B1E-B8D8-7C89E7BC1083}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -107,7 +112,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="nombres"
-              DTS:DTSID="{716F3F59-EF6B-423B-B25F-7407FCF18180}"
+              DTS:DTSID="{56EA65B7-EB45-4CFC-B19C-82DB8999642F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -115,7 +120,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="fech_nacim"
-              DTS:DTSID="{A6CFD2A0-8669-4C78-B5E7-1226D5EA580B}"
+              DTS:DTSID="{6E874126-3E09-49A2-B826-BD1EE1514BB6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -124,7 +129,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="lugar_nacim"
-              DTS:DTSID="{AA7CC1B2-8D66-466D-98A7-8D3AA2DC940E}"
+              DTS:DTSID="{1BADA622-0C4E-4816-9348-9E50C0E6C7C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -132,7 +137,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="nacional_actual"
-              DTS:DTSID="{B52A317D-D3B6-4017-BEC0-479534254B15}"
+              DTS:DTSID="{59B34E4C-0678-4E31-81FE-DA98CE740E0D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +145,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="nacional_origen"
-              DTS:DTSID="{2CEB09AC-7B90-4892-A50D-7C4D6076C432}"
+              DTS:DTSID="{39BDAE1C-872E-4941-BC4F-3C99C9B3846A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +154,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="sexo"
-              DTS:DTSID="{C082C62F-5273-4408-9DA5-B60E02F97177}"
+              DTS:DTSID="{7C08D60F-5A95-4D59-B1D3-05D8E1FA90D7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +163,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="instruccion"
-              DTS:DTSID="{081BB30F-60B1-45BB-9006-BD02B821F2B3}"
+              DTS:DTSID="{449C4524-B609-4194-84A3-2AC68AD0F722}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +172,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="profesion"
-              DTS:DTSID="{2B029840-192B-46E3-B284-D7294E8D80CD}"
+              DTS:DTSID="{A18807D4-89EC-40CC-BED3-657113A1808B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -176,7 +181,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="estado_civil"
-              DTS:DTSID="{20D30714-E8E8-400D-B0F0-BF857B85B816}"
+              DTS:DTSID="{62E8F9A1-A033-4FF8-AF22-B389FDB8EB11}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +189,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="fech_ecivil"
-              DTS:DTSID="{C3C0B7C4-54D2-40D1-8663-C987FC9CEE03}"
+              DTS:DTSID="{5A1E39C3-32DC-4288-8ED8-D8F33C48639C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,7 +198,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="acto_ecivil"
-              DTS:DTSID="{41C243DB-7AB6-435B-B5C3-8AEF2EC83894}"
+              DTS:DTSID="{833D81A1-8DC2-4C00-A404-17A169755C8B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,7 +207,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="domicilio"
-              DTS:DTSID="{4AC97CCB-367B-4C81-95ED-2C92E2E7CDFF}"
+              DTS:DTSID="{14B7FEFB-591B-491A-85AD-5A2CDF1CFD8F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +216,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="barrio_ciudad"
-              DTS:DTSID="{4DE36A69-5E5F-407C-8AA0-71609FAE82B1}"
+              DTS:DTSID="{3B9C0C80-42B8-4604-8A60-44D8121DB298}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +225,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="telefono"
-              DTS:DTSID="{B2C3E2C9-DEA5-45E3-993D-F864E30AA4D6}"
+              DTS:DTSID="{C811D7F4-100C-485A-85CB-CD429EA4A187}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,7 +234,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="celular"
-              DTS:DTSID="{E125882D-A710-4951-BC68-21DAD258823F}"
+              DTS:DTSID="{4F356BBA-1A21-4774-86C4-3210413EA9ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -238,7 +243,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="donante_org"
-              DTS:DTSID="{6FB6FC1C-381E-484A-A30A-2E0147A25EA5}"
+              DTS:DTSID="{8932203A-4C78-4E36-A1FE-D1075E4FDCB6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -247,7 +252,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="fallecido"
-              DTS:DTSID="{99AD54CF-124A-4679-8ADC-57171C602D81}"
+              DTS:DTSID="{E42DF6FB-FDE6-4519-9333-7D2A89489257}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -256,7 +261,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="tipo_docum"
-              DTS:DTSID="{7B7EE907-436B-4413-9D65-A284B56009E8}"
+              DTS:DTSID="{EDBC345E-5A40-48FC-8723-717F7D734373}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -265,7 +270,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ubicacion"
-              DTS:DTSID="{8EB17CA9-D7CA-44A8-94F8-99EEF07BC3B1}"
+              DTS:DTSID="{362CB8F4-DC58-46A2-93FC-C9498ECEC6CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -274,7 +279,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="observaciones"
-              DTS:DTSID="{7FEB1387-21DD-4FCA-9149-4D0131B42A42}"
+              DTS:DTSID="{D95C9D1D-F514-42F6-877F-52268EAE6375}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -283,7 +288,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="padre_cedul"
-              DTS:DTSID="{C2C6A1C2-E90F-4216-8257-0189FFE45558}"
+              DTS:DTSID="{3F1D13B1-CC92-4D17-B2E4-BDC6AF3B9947}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -292,7 +297,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="padre_nombre"
-              DTS:DTSID="{22D236E4-297E-4F1E-B0AB-872757F3946C}"
+              DTS:DTSID="{0FF1B60C-8463-41B7-BFBC-A8A9E5A9DA74}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -301,7 +306,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="padre_apelli"
-              DTS:DTSID="{C5934018-EE86-4309-8564-F7D401923C85}"
+              DTS:DTSID="{711FEBF5-D302-4577-A58D-2D75C0B1E0CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -310,7 +315,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="madre_cedul"
-              DTS:DTSID="{0E209986-4E2D-4620-86AC-2B2265DD496A}"
+              DTS:DTSID="{3EEFA87B-074A-40D7-8452-0927D8DD0729}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -319,7 +324,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="madre_nombre"
-              DTS:DTSID="{501357A0-C21D-47BC-BFE0-CAA6313C1867}"
+              DTS:DTSID="{1CE5E75E-AEA1-48EC-96A8-97A287C8D89F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -328,7 +333,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="madre_apelli"
-              DTS:DTSID="{A50DB06B-4865-460E-8EC9-3F4082F57732}"
+              DTS:DTSID="{9DAB2505-E520-4E10-AE81-3EC9DA29A71A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -337,7 +342,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="conyu_cedul"
-              DTS:DTSID="{2139A6F3-F027-45EC-A3D1-07961FD645E8}"
+              DTS:DTSID="{92A19BED-324F-4380-828F-90FAFCE4A8D2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -346,7 +351,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="conyu_nombre"
-              DTS:DTSID="{B524F6F3-B1B0-46DD-AB16-0C62196B8BE3}"
+              DTS:DTSID="{297C7592-E844-4C80-9F7A-9941960B1F10}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -355,7 +360,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="conyu_apelli"
-              DTS:DTSID="{DA7BB42B-926A-4390-9366-CC89429D6C91}"
+              DTS:DTSID="{2C804950-36FB-4DF4-8C45-64710688C27C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -364,7 +369,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="acomp_cedul"
-              DTS:DTSID="{93CA9FA5-AEB8-4C06-A41D-3E7697197021}"
+              DTS:DTSID="{2AEB16FF-9B24-4DE4-8BBD-1F9970F578AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -373,7 +378,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="acomp_parent"
-              DTS:DTSID="{B34534D4-CD15-4D6A-9F79-DCEE839B177D}"
+              DTS:DTSID="{A3EC3D77-A4EB-4761-9F51-C38C2553960F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -382,7 +387,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="acomp_nombre"
-              DTS:DTSID="{2EE6A915-6C09-4017-8A92-E25BC20D2220}"
+              DTS:DTSID="{B09F609E-AE1D-4775-9F06-0EDBFC60559C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -391,7 +396,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="acomp_apelli"
-              DTS:DTSID="{ACDB918F-2E81-477A-B97C-32EA32DE7FA5}"
+              DTS:DTSID="{E8951DC2-1525-44A5-A540-D6E17190A5C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -399,7 +404,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="fech_autoriz"
-              DTS:DTSID="{2B8C7365-01FA-4093-9C8B-9048FE57024D}"
+              DTS:DTSID="{E4564AE1-7F9C-49E9-B999-DA52C128E79D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -408,7 +413,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="func_autoriz"
-              DTS:DTSID="{36B23675-A585-4F71-85B7-9590D8E3879B}"
+              DTS:DTSID="{809086FC-AE22-4F56-AB60-05136C780919}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -416,7 +421,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="fech_impresion"
-              DTS:DTSID="{EE4A9A97-F04D-462F-8196-BC4A82207071}"
+              DTS:DTSID="{C35F47E8-EA4D-430B-8611-F7A3FCA35E48}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -425,7 +430,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="func_impresion"
-              DTS:DTSID="{301766EF-533C-4025-90FD-A38B5D3D8FD3}"
+              DTS:DTSID="{BDA3EC0A-D8CF-426C-AA0B-AFCCBE2E8BE6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -434,7 +439,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="numero_soporte"
-              DTS:DTSID="{C20A5D52-D56A-45A5-8C0C-FD21433E83B7}"
+              DTS:DTSID="{4D135D9D-B9D3-4880-BE80-FEB3BC2D53A1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -442,7 +447,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="fech_entrega"
-              DTS:DTSID="{20F9A81B-C973-4C08-A6BC-CCBA10D652CC}"
+              DTS:DTSID="{38BF98D5-0C4A-4998-8622-53CC33D49FF6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -451,7 +456,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="func_entrega"
-              DTS:DTSID="{50DA88C1-BFCC-48A2-8CDA-3D7D15DF9701}"
+              DTS:DTSID="{D1297F5E-0EB3-4494-A8B7-7BF8D9F32C5F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -460,7 +465,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="prontuario_s"
-              DTS:DTSID="{43B79CE6-E89D-4360-BC6C-28778EDBB9BD}"
+              DTS:DTSID="{CE72D0D2-AC77-484D-BFDA-68B99EF40385}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -469,7 +474,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="retirado_por"
-              DTS:DTSID="{1F47BF40-6321-42A1-BFC0-946EFBE439EE}"
+              DTS:DTSID="{5983F93D-9C42-4792-8E6E-BFBF9F730B9C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -477,7 +482,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="hora_insert"
-              DTS:DTSID="{052EB717-49AA-4F27-B867-A31F8A642071}"
+              DTS:DTSID="{C517E0CB-015B-482D-A323-52385BD3F5D7}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -620,46 +625,51 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_ofnac]"
-                      dataType="i4"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_ofnac]"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_ofnac]"
                       name="ic_ofnac"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_feccar]"
-                      dataType="i4"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_feccar]"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_feccar]"
                       name="ic_feccar"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_folio]"
-                      dataType="i4"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_folio]"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_folio]"
                       name="ic_folio"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_tomo]"
-                      dataType="i4"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_tomo]"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_tomo]"
                       name="ic_tomo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_acta]"
-                      dataType="i4"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_acta]"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_acta]"
                       name="ic_acta"
                       truncationRowDisposition="FailComponent" />
@@ -713,21 +723,19 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_actual]"
-                      dataType="wstr"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_actual]"
-                      length="128"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_actual]"
                       name="nacional_actual"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_origen]"
-                      dataType="wstr"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_origen]"
-                      length="128"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_origen]"
                       name="nacional_origen"
                       truncationRowDisposition="FailComponent" />
@@ -1120,23 +1128,28 @@
                       name="cedula" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_ofnac]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_ofnac" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_feccar]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_feccar" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_folio]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_folio" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_tomo]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_tomo" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ic_acta]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_acta" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[prontuario]"
@@ -1163,13 +1176,11 @@
                       name="lugar_nacim" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_actual]"
-                      dataType="wstr"
-                      length="128"
+                      dataType="i4"
                       name="nacional_actual" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[nacional_origen]"
-                      dataType="wstr"
-                      length="128"
+                      dataType="i4"
                       name="nacional_origen" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[sexo]"
@@ -1376,27 +1387,32 @@
                       name="cedula" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_ofnac]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_ofnac]"
                       name="ic_ofnac" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_feccar]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_feccar]"
                       name="ic_feccar" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_folio]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_folio]"
                       name="ic_folio" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_tomo]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_tomo]"
                       name="ic_tomo" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_acta]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ic_acta]"
                       name="ic_acta" />
                     <outputColumn
@@ -1429,14 +1445,12 @@
                       name="lugar_nacim" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_actual]"
-                      dataType="wstr"
-                      length="128"
+                      dataType="i4"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_actual]"
                       name="nacional_actual" />
                     <outputColumn
                       refId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_origen]"
-                      dataType="wstr"
-                      length="128"
+                      dataType="i4"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[nacional_origen]"
                       name="nacional_origen" />
                     <outputColumn
@@ -1724,31 +1738,36 @@
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[cedula]" />
                     <inputColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_ofnac]"
-                      cachedDataType="i4"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ic_ofnac"
                       externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_ofnac]"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_ofnac]" />
                     <inputColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_feccar]"
-                      cachedDataType="i4"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ic_feccar"
                       externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_feccar]"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_feccar]" />
                     <inputColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_folio]"
-                      cachedDataType="i4"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ic_folio"
                       externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_folio]"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_folio]" />
                     <inputColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_tomo]"
-                      cachedDataType="i4"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ic_tomo"
                       externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_tomo]"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_tomo]" />
                     <inputColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[ic_acta]"
-                      cachedDataType="i4"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ic_acta"
                       externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_acta]"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[ic_acta]" />
@@ -1787,15 +1806,13 @@
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[lugar_nacim]" />
                     <inputColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[nacional_actual]"
-                      cachedDataType="wstr"
-                      cachedLength="128"
+                      cachedDataType="i4"
                       cachedName="nacional_actual"
                       externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_actual]"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_actual]" />
                     <inputColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].Columns[nacional_origen]"
-                      cachedDataType="wstr"
-                      cachedLength="128"
+                      cachedDataType="i4"
                       cachedName="nacional_origen"
                       externalMetadataColumnId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_origen]"
                       lineageId="Package\Export Personal Data Operations\ADO NET Source.Outputs[ADO NET Source Output].Columns[nacional_origen]" />
@@ -2070,23 +2087,28 @@
                       name="cedula" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_ofnac]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_ofnac" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_feccar]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_feccar" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_folio]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_folio" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_tomo]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_tomo" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ic_acta]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="ic_acta" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[prontuario]"
@@ -2113,14 +2135,12 @@
                       name="lugar_nacim" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_actual]"
-                      dataType="numeric"
-                      name="nacional_actual"
-                      precision="18" />
+                      dataType="i4"
+                      name="nacional_actual" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[nacional_origen]"
-                      dataType="numeric"
-                      name="nacional_origen"
-                      precision="18" />
+                      dataType="i4"
+                      name="nacional_origen" />
                     <externalMetadataColumn
                       refId="Package\Export Personal Data Operations\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[sexo]"
                       dataType="wstr"
@@ -2468,7 +2488,7 @@
     design-time-name="Package\Export Personal Data Operations">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,42"
           Id="Package\Export Personal Data Operations\Flat File Destination"
@@ -2508,9 +2528,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
